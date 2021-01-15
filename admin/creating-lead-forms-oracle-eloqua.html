@@ -1,0 +1,697 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Creación de Formularios de Lead en Oracle Eloqua</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">CAMPAÑA DE BRIGHTCOVE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Otros documentos de Brightcove</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentación Inicio</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/admin/">Administrar cuentas</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Creación de Formularios de Lead en Oracle Eloqua</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-campaign-training-videos.html">Videos de capacitación de campaña</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-campaign.html">Introducción a la campaña de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-campaign-trial.html">Introducción a la prueba de campaña de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Descripción general de los tipos de contenido de vídeo<a href="/get-started/overview-video-content-types.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar y publicar su primer vídeo<a href="/get-started/uploading-publishing-your-first-video.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/driving-video-views-email.html">Cómo conducir las vistas de vídeo por correo electrónico</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
+                  
+                
+                  
+                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Publicar vídeos<a href="/videos/publishing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
+                  
+                
+                  
+                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión del Panel +<a href="/dashboard/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/dashboard/dashboard-overview.html">Descripción general del panel</a></li>
+                  
+                
+                  
+                    <li>Revisión del Panel de Control Avanzado<a href="/dashboard/reviewing-adv-dashboard.html"></a></li>
+                  
+                
+                  
+                    <li>Revisión del panel básico<a href="/dashboard/reviewing-basic-dashboard.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/analytics/how-vbs-calculated.html">Cómo se calcula la puntuación de rendimiento de vídeo</a></li>
+                  
+                
+                  
+                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la extensión de Chrome de pantalla Heads-Up<a href="/analytics/using-hud.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/admin/configuring-adobe-analytics-event-tracking.html">Configuración de Adobe Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-google-analytics-event-tracking.html">Configuración de Google Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-map-connections.html">Configuración de conexiones MAP</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-hubspot-client-side-api.html">Conexión a HubSpot (API del lado del cliente)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-hubspot-rest-api.html">Conexión a HubSpot (API REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-marketo-munchkin.html">Conexión a Marketo (Munchkin)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-marketo-rest-api.html">Conexión a Marketo (API REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-oracle-eloqua.html">Conexión a Oracle Eloqua</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-salesforce.html">Conexión a Salesforce</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-salesforce-object-pardot.html">Creación de un objeto de Salesforce para Pardot</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms.html">Creación de formularios de prospectas</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-hubspot.html">Creación de formularios de prospecto en HubSpot</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-marketo.html">Creación de formularios de prospecto en Marketo</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-oracle-eloqua.html">Creación de Formularios de Lead en Oracle Eloqua</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-salesforce.html">Creación de formularios de prospecto en Salesforce</a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
+                  
+                
+                  
+                    <li>Jugadores de estilo<a href="/admin/styling-players.html"></a></li>
+                  
+                
+                  
+                    <li>Revisión de datos de eventos de jugador en Google Analytics<a href="/admin/reviewing-player-event-data-in-google-analytics.html"></a></li>
+                  
+                
+                  
+                    <li>Consulta de Información de Facturación<a href="/admin/viewing-billing-information.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">Respuestas de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+<ul id="in_prod_nav" class="pager" style="display: none;">
+  <li><a href="#"><img src="/assets/images/feather/chevron-left.svg" alt="espalda"/></a></li>
+  <li>&nbsp;&nbsp;&nbsp;&nbsp;Documentación de Beacon&nbsp;&nbsp;&nbsp;&nbsp;</li>
+  <li><a href="#"><img src="/assets/images/feather/chevron-right.svg" alt="adelante"/></a></li>
+</ul>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Creación de Formularios de Lead en Oracle Eloqua</h1>
+  <summary>En este tema aprenderá cómo crear un formulario de Oracle Eloqua que se puede utilizar para capturar datos de prospectos durante la reproducción de vídeo.</summary>
+  <section class="bcls-section">
+    <p>Brightcove Campaign ofrece la posibilidad de crear formularios de prospectos que le permiten capturar información del espectador durante la reproducción de vídeo. Los formularios le dan la capacidad de incluir los campos que necesite (visibles u ocultos) y también le dan la capacidad de aprovechar características como el perfilado progresivo (si está disponible). Eloqua recibirá y procesará los datos de captación de clientes potenciales.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">Creación de un formulario en Eloqua</h2>
+    <p>Eloqua proporciona la capacidad de crear formularios que se pueden utilizar para capturar información del espectador. El formulario HTML que se genera se utilizará al crear un formulario de prospecto dentro de Brightcove Campaign. Los datos que se recogen pueden emplearse para personalizar futuras interacciones. Siguiendo los pasos que aparecen a continuación, podrá crear un formulario sencillo para recoger nombre, apellidos y dirección de correo electrónico. Si desea más detalles sobre los formularios de Eloqua, consulte la <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/Forms/Forms.htm"> Documentación de Eloqua</a>.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Inicie sesión en su cuenta de Eloqua.</li>
+      <li>Desplácese a <strong>Activos</strong> &gt; <strong>Formularios</strong> y haga clic en <strong>Crear un formulario</strong>. Se abre el Selector de plantillas de formularios.</li>
+      <li>Haga clic en <strong>Formulario en blanco</strong> y después en <strong>Seleccionar</strong>.</li>
+      <li>En la navegación izquierda, expanda el panel <strong>Grupos de campos</strong> .</li>
+      <li>En el panel <strong>Grupos de campos</strong> , haga clic en <strong>Información básica de contacto</strong> y arrástrela a la plantilla de formulario.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="elemento de arrastre eloqua" src="/assets/images/admin/eloqua-form-add-fields.png"/></figure>
+      </li>
+      <li>Confirme que los campos se han agregado al formulario.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="campos de formulario eloqua" src="/assets/images/admin/eloqua-form-fields-on-form.png"/></figure>
+      </li>
+      <li>De forma predeterminada, los campos se añaden mediante fusión. Esto hará que aparezca texto extraño en los campos cuando se utiliza en Brightcove Campaign. Para eliminar la fusión de campos, haga clic en el campo <strong>Nombre</strong> para seleccionarlo.</li>
+      <li>En el panel de navegación izquierdo, busque la sección <strong>Propiedades generales</strong> y establezca la propiedad <strong>Rellenar datos de campo previamente</strong> en <strong>Ninguno</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="propiedades de formulario eloqua" src="/assets/images/admin/eloqua-form-pre-pop.png"/></figure>
+      </li>
+      <li>Repita el proceso con los campos <strong>Apellidos</strong> y <strong>Correo electrónico</strong>.</li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+      <li>Asigne un nombre al formulario y, a continuación, haga clic en <strong>Guardar</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lista de formularios eloqua" src="/assets/images/admin/eloqua-form-save-form.png"/></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Copiado del código HTML del formulario</h2>
+    <p>Para utilizar el formulario dentro de Brightcove Campaign, deberá copiar el formulario HTML. Siga estos pasos para copiar el código HTML del formulario:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Haga clic en <strong>Acciones &gt; Ver formulario HTML...</strong> Se mostrará el formulario HTML.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="eloqua formulario html" src="/assets/images/admin/eloqua-form-html.png"/></figure>
+      </li>
+      <li>Copie todo el código HTML al portapapeles. Haga clic en <strong>Cerrar</strong>.</li>
+      <li>Pegue el HTML del formulario en el editor HTML que prefiera. Para formatear el código de manera que resulte más legible, utilice la función de formateo de código de su editor.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="styleform">Aplicación de un estilo al formulario</h2>
+    <p>De forma predeterminada, cuando se muestra el formulario de prospecto, el formulario se mostrará sobre un fondo transparente sobre el reproductor. Querrá hacer un poco de estilo básico al formulario usando CSS. En las secciones siguientes se facilitan ejemplos de estilo de formulario. También se facilita la CSS correspondiente. Es posible que se deba adaptar la CSS para emplear los colores habituales o para gestionar el estilo de los campos adicionales.</p>
+    <div class="BCL-subsection">
+      <h3>Ejemplo de estilo sencillo de formulario</h3>
+      <p>En este ejemplo se emplean CSS para cambiar a gris el color de fondo del formulario, que presentará el siguiente aspecto:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="forma de estilo eloqua" src="/assets/images/admin/eloqua-form-simple-styling.png"/></figure>
+      <p>Para aplicar este estilo, añada la siguiente CSS a la parte superior de la etiqueta HTML <code translate="No">style</code> del formulario.</p>
+      <pre>
+cuerpo {
+      color de fondo: rgba (204,204,204,0,9);
+      margen: 0;
+      acolchado: 20 px;
+      height: 100%;
+}
+  </pre>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Ejemplo de estilo avanzado de formulario</h3>
+      <p>En este ejemplo se emplea JavaScript para cambiar a negro el color de fondo del formulario y aplicar un formato básico a los campos. El formulario presentará el siguiente aspecto:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="eloqua forma estilo avanzado" src="/assets/images/admin/eloqua-form-adv-styling.png"/></figure>
+      <p>Para aplicar este estilo, añada el siguiente código JavaScript a la parte inferior del código HTML  del formulario.</p>
+      <pre>
+
+&lt;secuencia de comandos &gt;
+  var labels = document.getElementsByClassName ('elq-label'),
+      eForm = document.querySelector ('form.elq-form'),
+      SubmitButton = document.getElementsByClassName ('estilo de botón de presentación') [0],
+      //titleLable = document.querySelector ('label.label'),
+      FirstName = document.getElementsByName ('FirstName') [0],
+      LastName = document.getElementsByName ('Apellido') [0],
+      EmailAddress = document.getElementsByName ('EmailAddress') [0],
+      i;
+
+  para (i = 0; i &lt; etiquetas.length; i ++)
+     {labels [i] .setAttribute ('style', 'display: none; ');}
+
+  eForm.parentNode.setAttribute ('style', 'background-color: #333; altura:12em; text-align:center; relleno: 0% 20%; ');
+  //titleLable.setAttribute ('style', 'display: none; ');
+  submitbutton.setAttribute ('style', 'altura:2em; color de fondo: #337d87; color: #fff; border:none; border-radio: .3em; relleno: .3em .5em; font-size:1em; ');
+  FirstName.setAttribute ('style', 'margen: .5em; altura:2em; ancho: 80%; padding-left: .5em; font-size:1em; border:none; border-radio: .3em; ');
+  FirstName.setAttribute ('marcador de posición', 'Primer nombre');
+  Apellido.setAttribute ('style', 'margen: .5em; altura:2em; ancho: 80%; padding-left: .5em; font-size:1em; border:none; border-radio: .3em; ');
+  Apellido.setAttribute ('marcador de posición', 'Apellido');
+  EmailAddress.setAttribute ('style', 'margen: .5em; altura:2em; ancho: 80%; padding-left: .5em; font-size:1em; border:none; border-radio: .3em; ');
+  EmailAddress.setAttribute ('marcador de posición', 'Correo electrónico');
+&lt;/script &gt;</pre>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="createform">Creación de un formulario de prospecto de campaña de Brightcove</h2>
+    <p>Una vez creado y aplicado el estilo del formulario, el formulario HTML se utilizará dentro de Brightcove Campaign al crear un formulario de prospecto. Para obtener información sobre la creación de un formulario de prospecto, consulte <a href="/admin/creating-lead-forms.html">Creación de formularios de prospecto</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">Validar los datos del formulario en Eloqua</h2>
+    <p>Hay varias maneras de comprobar que los datos del formulario se han pasado a Eloqua. Siga estos pasos para ver los datos del formulario en Eloqua.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Inicie sesión en su cuenta de Eloqua.</li>
+      <li>Desplácese a <strong>Activos</strong> &gt; <strong>Formularios</strong>.</li>
+      <li>En el panel de navegación izquierdo, haga clic en el enlace <strong>Todos los archivos</strong> para que se muestren todos los formularios.</li>
+      <li>Haga doble clic en el nombre del formulario para abrirlo.</li>
+      <li>Haga clic en <strong>Acciones &gt; Ver datos de envío...</strong> Se mostrarán los datos del formulario.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="datos de formulario de plomo eloqua" src="/assets/images/admin/eloqua-form-data.png"/></figure>
+      </li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Última actualización de la página el 29-09-2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
