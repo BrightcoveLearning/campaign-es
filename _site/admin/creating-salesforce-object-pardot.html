@@ -1,0 +1,691 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Creación de un objeto de Salesforce personalizado para la integración de Pardot</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">CAMPAÑA DE BRIGHTCOVE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/admin/">Administrar cuentas</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Creación de un objeto de Salesforce personalizado para la integración de Pardot</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-campaign-training-videos.html">Videos de capacitación de campaña</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-campaign.html">Introducción a la campaña de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-campaign-trial.html">Introducción a la prueba de campaña de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Descripción general de los tipos de contenido de vídeo<a href="/get-started/overview-video-content-types.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar y publicar su primer vídeo<a href="/get-started/uploading-publishing-your-first-video.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/driving-video-views-email.html">Cómo conducir las vistas de vídeo por correo electrónico</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
+                  
+                
+                  
+                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Publicar vídeos<a href="/videos/publishing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
+                  
+                
+                  
+                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión del Panel +<a href="/dashboard/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/dashboard/dashboard-overview.html">Descripción general del panel</a></li>
+                  
+                
+                  
+                    <li>Revisión del Panel de Control Avanzado<a href="/dashboard/reviewing-adv-dashboard.html"></a></li>
+                  
+                
+                  
+                    <li>Revisión del panel básico<a href="/dashboard/reviewing-basic-dashboard.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/analytics/how-vbs-calculated.html">Cómo se calcula la puntuación de rendimiento de vídeo</a></li>
+                  
+                
+                  
+                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la extensión de Chrome de pantalla Heads-Up<a href="/analytics/using-hud.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/admin/configuring-adobe-analytics-event-tracking.html">Configuración de Adobe Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-google-analytics-event-tracking.html">Configuración de Google Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-map-connections.html">Configuración de conexiones MAP</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-hubspot-client-side-api.html">Conexión a HubSpot (API del lado del cliente)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-hubspot-rest-api.html">Conexión a HubSpot (API REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-marketo-munchkin.html">Conexión a Marketo (Munchkin)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-marketo-rest-api.html">Conexión a Marketo (API REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-oracle-eloqua.html">Conexión a Oracle Eloqua</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-salesforce.html">Conexión a Salesforce</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-salesforce-object-pardot.html">Creación de un objeto de Salesforce para Pardot</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms.html">Creación de formularios de prospectas</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-hubspot.html">Creación de formularios de prospecto en HubSpot</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-marketo.html">Creación de formularios de prospecto en Marketo</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-oracle-eloqua.html">Creación de Formularios de Lead en Oracle Eloqua</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-salesforce.html">Creación de formularios de prospecto en Salesforce</a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
+                  
+                
+                  
+                    <li>Jugadores de estilo<a href="/admin/styling-players.html"></a></li>
+                  
+                
+                  
+                    <li>Revisión de datos de eventos de jugador en Google Analytics<a href="/admin/reviewing-player-event-data-in-google-analytics.html"></a></li>
+                  
+                
+                  
+                    <li>Consulta de Información de Facturación<a href="/admin/viewing-billing-information.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+<ul id="in_prod_nav" class="pager" style="display: none;">
+  <li><a href="#"><img src="/assets/images/feather/chevron-left.svg" alt="espalda"/></a></li>
+  <li>&nbsp;&nbsp;&nbsp;&nbsp;Documentación de Beacon&nbsp;&nbsp;&nbsp;&nbsp;</li>
+  <li><a href="#"><img src="/assets/images/feather/chevron-right.svg" alt="adelante"/></a></li>
+</ul>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Creación de un objeto de Salesforce personalizado para la integración de Pardot</h1>
+  <summary>En este tema, aprenderá cómo crear el objeto personalizado de Salesforce que se requiere cuando se utiliza la integración de Pardot.</summary>
+  <section class="bcls-section">
+    <p>Para enviar datos a la plataforma Pardot, es necesario que envíe datos de visualización de nivel de contacto a su CRM de Salesforce a través de un objeto personalizado. A continuación, puede usar las capacidades nativas de Pardot y Salesforce CRM para ingerir el nuevo objeto personalizado en Pardot.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">Requisitos</h2>
+    <p>Para usar la integración de Salesforce - Pardot, debe:</p>
+    <ul>
+      <li>Debe tener instalado y configurado Salesforce y Pardot Connector. Póngase en contacto con su administrador de cuentas de Pardot si necesita ayuda. </li>
+      <li>Debe tener disponible una asignación de objetos personalizados disponible en su cuenta de Pardot. Póngase en contacto con su administrador de cuentas de Salesforce si necesita comprar asignaciones de objetos adicionales. </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sf-objects">Objetos de Salesforce</h2>
+    <p>Los objetos son tablas de base de datos que le permiten almacenar datos específicos de la organización en Salesforce. Hay dos tipos de objetos en Salesforce:</p>
+    <ul>
+      <li> Objetos estándar: los objetos proporcionados por salesforce.com se denominan objetos estándar.<strong></strong> Ejemplos de objetos estándar son Cuentas, Contactos, Oportunidades, Leads, Productos, Campañas, Casos, Usuarios, Contratos, Informes y Paneles</li>
+      <li><strong>Objeto personalizado</strong> : los objetos creados por los usuarios se denominan objetos personalizados. Los objetos personalizados almacenan información única e importante para la organización y proporcionan una estructura para compartir datos. Los datos de visualización de vídeo se pueden enviar desde Brightcove Players a Salesforce mediante objetos personalizados. Se pueden agregar diferentes campos con diferentes tipos de datos al objeto. Una relación de búsqueda esencialmente vincula dos objetos juntos para que pueda «buscar» un objeto de los elementos relacionados en otro objeto. Podemos crear una relación de buscar entre el objeto personalizado y un contacto.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="object-creation">Creación de un objeto personalizado</h2>
+    <p>Los contactos son los usuarios cuyo comportamiento desea realizar un seguimiento o mantener registros en Salesforce. Debe haber una relación entre el objeto personalizado que se crea a continuación y el objeto Contact en Salesforce para obtener datos relacionados con el usuario correcto. Para crear este objeto personalizado, siga estos pasos:</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Nota: Las imágenes de pantalla siguientes se tomaron utilizando la interfaz de Salesforce Lightning.</aside>
+    <ol class="bcls-tasklist">
+      <li>Inicie sesión en Salesforce.</li>
+      <li>Haga clic en el icono de engranaje en la esquina superior derecha para abrir el menú <strong>Configuración</strong> .
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-setup-menu.png"/></figure>
+      </li>
+      <li>En la navegación izquierda, en la sección <strong>HERRAMIENTAS DE PLATAFORMA</strong> , haga clic en <strong>Objetos y campos Administrador de &gt; objetos</strong>.</li>
+      <li>En la parte superior de la página <strong>Administrador de objetos</strong> , haga clic en <strong>Crear objeto &gt; personalizado</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-create-custom-object.png"/></figure>
+      </li>
+      <li>Introduzca una <strong>etiqueta</strong>. Brightcove recomienda usar <code translate="No">BC Video View</code>. </li>
+      <li>Introduzca una <strong>etiqueta plural</strong>. Brightcove recomienda usar <code translate="No">BC Video Views</code>.</li>
+      <li>Introduzca un <strong>nombre de objeto</strong>. Se generará un valor inicial basado en el valor <strong>Label</strong> .</li>
+      <li>Introduzca un <strong>nombre de registro</strong>. Se generará un valor inicial basado en el valor <strong>Label</strong> . Confirme que el <strong>tipo de datos</strong> es <strong>texto</strong>.</li>
+      <li>Seleccione las funciones opcionales.<strong></strong>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-new-custom-object.png"/></figure>
+      </li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+      <li>En la página Detalle de objeto personalizado, busque la sección Campos y relaciones personalizados.<strong></strong><strong></strong></li>
+      <li>Haga clic en <strong>Nuevo</strong>.</li>
+      <li>Cree los siguientes campos personalizados. Para todos los campos, establezca el <strong>Tipo de datos</strong> en <strong>Texto</strong> y mantenga las opciones predeterminadas de seguridad a nivel de campo y diseño de página.
+        <table width="92%" class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th width="40%">Etiqueta del campo</th>
+              <th width="20%">Longitud<strong></strong></th>
+              <th width="40%">Nombre de campo<strong></strong></th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Id. del vídeo</td>
+              <td valign="top"><p>200</p></td>
+              <td valign="top"><p>ID de vídeo</p></td>
+            </tr>
+            <tr>
+              <td>Identificador del reproductor</td>
+              <td valign="top"><p>200</p></td>
+              <td valign="top"><p>Id. de jugador_jugador</p></td>
+            </tr>
+            <tr>
+              <td>URL de la página</td>
+              <td valign="top">200</td>
+              <td valign="top">Página_URL</td>
+            </tr>
+            <tr>
+              <td>Marca de tiempo</td>
+              <td valign="top">200</td>
+              <td valign="top">Time_Stamp</td>
+            </tr>
+            <tr>
+              <td>Tiempo total visto</td>
+              <td valign="top">200</td>
+              <td valign="top">Total_Time_Watched</td>
+            </tr>
+            <tr>
+              <td>Porcentaje observado</td>
+              <td valign="top">200</td>
+              <td valign="top">Porcentage_Observado</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Confirme que se han creado todos los campos.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-all-custom-fields.png"/></figure>
+      </li>
+      <li>En la sección <strong>Campos y relaciones personalizados</strong> , haga clic en <strong>Nuevo</strong>.</li>
+      <li>Seleccione Relación de búsqueda y haga clic en Siguiente.<strong></strong><strong></strong></li>
+      <li>En el menú desplegable <strong>Relacionado</strong> con, seleccione <strong>Contacto</strong>. Haga clic en <strong>Next</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-related-to.png"/></figure>
+        <p>Esto asociará el objeto personalizado de vista de vídeo BC con un contacto en Salesforce.</p>
+      </li>
+      <li>En <strong>Nombre de campo</strong>, escriba <strong>Contacto</strong>. Haga clic en <strong>Next</strong>.</li>
+      <li>Mantenga las opciones de seguridad predeterminadas a nivel de campo. Haga clic en <strong>Next</strong>.</li>
+      <li>En la página del campo de referencia (paso 5), haga clic en Siguiente.<strong></strong></li>
+      <li>En la página de listas relacionadas personalizadas (paso 6), haga clic en Guardar.<strong></strong></li>
+    </ol>
+    <p>Normalmente, al utilizar el tipo de integración de Pardot, seleccionará el Tipo de asignación <strong>avanzada</strong> en la campaña de Brightcove y, a continuación, asignará los campos de vista al objeto personalizado de Salesforce que creó.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="pardot-data">Visualización de datos en Pardot</h2>
+    <p>Una vez sincronizados los datos, puede ver los objetos y datos en Pardot.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>En la navegación de la izquierda, pase el cursor sobre <strong>Administrador</strong> y haga clic en <strong>Objetos personalizados</strong>. </li>
+      <li>Haga clic en <strong>+ Agregar objeto personalizado</strong>.</li>
+      <li>Seleccione el objeto personalizado Vista de vídeo BC.<strong></strong></li>
+      <li>En la navegación de la izquierda, pase el cursor sobre <strong>Perspectos</strong> y haga clic en <strong>Lista de prospectos</strong>. Se mostrarán los contactos que se han creado en Salesforce.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-prospect-list.png"/></figure>
+      </li>
+      <li>Haga clic en el nombre de un cliente potencial.</li>
+      <li>Haga clic en la ficha <strong>Objetos relacionados</strong> . Confirme que aparezcan los datos de objeto personalizados (estos son los mismos datos que se encuentran en Salesforce).
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-related-objects.png"/></figure>
+      </li>
+      <li>Haga clic en el nombre del vídeo para ver los detalles.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/sf-pardot-video-details.png"/></figure>
+      </li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

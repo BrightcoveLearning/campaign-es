@@ -1,0 +1,663 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Uso de la extensión de Chrome de pantalla Heads-Up</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">CAMPAÑA DE BRIGHTCOVE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Revisión de análisis<a href="/analytics/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Uso de la extensión de Chrome de pantalla Heads-Up</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-campaign-training-videos.html">Videos de capacitación de campaña</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-campaign.html">Introducción a la campaña de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-campaign-trial.html">Introducción a la prueba de campaña de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Descripción general de los tipos de contenido de vídeo<a href="/get-started/overview-video-content-types.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar y publicar su primer vídeo<a href="/get-started/uploading-publishing-your-first-video.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/driving-video-views-email.html">Cómo conducir las vistas de vídeo por correo electrónico</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
+                  
+                
+                  
+                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Publicar vídeos<a href="/videos/publishing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
+                  
+                
+                  
+                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión del Panel +<a href="/dashboard/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/dashboard/dashboard-overview.html">Descripción general del panel</a></li>
+                  
+                
+                  
+                    <li>Revisión del Panel de Control Avanzado<a href="/dashboard/reviewing-adv-dashboard.html"></a></li>
+                  
+                
+                  
+                    <li>Revisión del panel básico<a href="/dashboard/reviewing-basic-dashboard.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/analytics/how-vbs-calculated.html">Cómo se calcula la puntuación de rendimiento de vídeo</a></li>
+                  
+                
+                  
+                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la extensión de Chrome de pantalla Heads-Up<a href="/analytics/using-hud.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/admin/configuring-adobe-analytics-event-tracking.html">Configuración de Adobe Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-google-analytics-event-tracking.html">Configuración de Google Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-map-connections.html">Configuración de conexiones MAP</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-hubspot-client-side-api.html">Conexión a HubSpot (API del lado del cliente)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-hubspot-rest-api.html">Conexión a HubSpot (API REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-marketo-munchkin.html">Conexión a Marketo (Munchkin)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-marketo-rest-api.html">Conexión a Marketo (API REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-oracle-eloqua.html">Conexión a Oracle Eloqua</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/connecting-to-salesforce.html">Conexión a Salesforce</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-salesforce-object-pardot.html">Creación de un objeto de Salesforce para Pardot</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms.html">Creación de formularios de prospectas</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-hubspot.html">Creación de formularios de prospecto en HubSpot</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-marketo.html">Creación de formularios de prospecto en Marketo</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-oracle-eloqua.html">Creación de Formularios de Lead en Oracle Eloqua</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-lead-forms-salesforce.html">Creación de formularios de prospecto en Salesforce</a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
+                  
+                
+                  
+                    <li>Jugadores de estilo<a href="/admin/styling-players.html"></a></li>
+                  
+                
+                  
+                    <li>Revisión de datos de eventos de jugador en Google Analytics<a href="/admin/reviewing-player-event-data-in-google-analytics.html"></a></li>
+                  
+                
+                  
+                    <li>Consulta de Información de Facturación<a href="/admin/viewing-billing-information.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+<ul id="in_prod_nav" class="pager" style="display: none;">
+  <li><a href="#"><img src="/assets/images/feather/chevron-left.svg" alt="espalda"/></a></li>
+  <li>&nbsp;&nbsp;&nbsp;&nbsp;Documentación de Beacon&nbsp;&nbsp;&nbsp;&nbsp;</li>
+  <li><a href="#"><img src="/assets/images/feather/chevron-right.svg" alt="adelante"/></a></li>
+</ul>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Uso de la extensión de Chrome de pantalla Heads-Up</h1>
+  <summary>En este tema aprenderá cómo instalar y usar la extensión de navegador Chrome Heads-Up Display (HUD).</summary>
+  <section class="bcls-section">
+    <p>La pantalla Heads-Up (HUD) es una extensión de Chrome que proporciona la capacidad de:</p>
+    <ul>
+      <li> Ver métricas de rendimiento de vídeos en una página en vivo</li>
+      <li>Publicar, editar y eliminar vídeos de tu cuenta</li>
+    </ul>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-analytics.png"/></figure>
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="install">Instalación de la extensión de Chrome</h2>
+    <p>Para instalar la extensión Heads-Up Display Chrome, siga estos pasos:</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Con el navegador web Google Chrome, accede a la página de extensión de la campaña de Brightcove <a href="https://chrome.google.com/webstore/detail/brightcove-campaign/bgffgogohphibnhbmfdlldmbidlodkop">aquí</a>.</li>
+      <li>Haz clic en <strong>Añadir a Chrome</strong>.</li>
+      <li>Cuando se le solicite, haga clic en <strong>Agregar extensión</strong>.</li>
+      <li>Confirme que la extensión se instaló localizando el logotipo de Brightcove junto a la barra de direcciones.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/browser-hud-icon.png"/></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="using">Abrir la pantalla de Heads-Up</h2>
+    <p>La pantalla Heads-Up es útil para ver análisis de vídeo y para publicar, editar y eliminar vídeos de su cuenta. Para abrir el HUD, siga estos pasos:</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Abre Google Chrome.</li>
+      <li>Haga clic en el logotipo de Brightcove situado junto a la barra de direcciones para abrir la extensión.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/browser-hud-icon.png"/></figure>
+      </li>
+      <li>Si no tiene una sesión activa con la aplicación Campaign de Brightcove, se le pedirá que inicie sesión. Introduzca su dirección de correo electrónico y contraseña. Haga clic <strong>en Iniciar sesión</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-login.png"/></figure>
+      </li>
+    </ol>
+    <p>Los iconos en la parte superior del HUD se pueden usar para:</p>
+    <ul>
+      <li><a href="#analytics">Revisar análisis</a></li>
+      <li><a href="#videos">Administrar vídeos</a></li>
+    </ul>
+    <p>Al hacer clic en <strong>Ir a Web</strong> , se abrirá la aplicación Campaign de Brightcove en una ventana del navegador.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="account">Selección de una cuenta</h2>
+    <p>En la parte superior derecha del HUD se mostrará la cuenta de Campaña actual.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-account.png"/></figure>
+    <p> Si tienes acceso a varias cuentas de Campaña, al hacer clic en el nombre de la cuenta se abrirá el selector de cuentas. Haga clic en el menú desplegable <strong>Nombre de cuenta</strong> para seleccionar otra cuenta con la que trabajar.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-select-account.png"/></figure>
+    <p>Para cerrar sesión en el HUD, haga clic en <strong>Cerrar sesión</strong>. </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="analytics">Revisar análisis de vídeos</h2>
+    <p>Cuando el HUD se abre por primera vez, muestra análisis de vídeo. También puede hacer clic en el icono de análisis (<img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-analytics-icon.png"/>) para ir al modo de análisis. El HUD solo mostrará análisis de vídeos en la página publicada mediante Brightcove Campaign™.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-analytics.png"/></figure>
+    <p>El HUD mostrará información básica sobre los vídeos en la página:</p>
+    <ul>
+      <li>Nombre del vídeo</li>
+      <li>Id. del vídeo</li>
+      <li>Tipo de contenido de vídeo</li>
+      <li>Fecha de creación</li>
+    </ul>
+    <p>Si hay varios vídeos en la página, los botones <strong>Vídeo anterior</strong> y <strong>Vídeo siguiente</strong> estarán habilitados.</p>
+    <p>Los análisis de vídeo en el HUD son «casi en tiempo real». Por lo general, los análisis se retrasan unos minutos, pero el retraso puede aumentar durante los picos de tráfico. Se mostrarán los siguientes datos analíticos de los últimos 30 días:</p>
+    <ul>
+      <li><strong>Impresiones de vídeo</strong> : el número de veces que se cargó el vídeo y listo para su reproducción</li>
+      <li><strong>Inicio de vídeo</strong> : el número de veces que el vídeo comenzó a reproducirse</li>
+      <li><strong>Tiempo de visualización: Tiempo total visualizado/Inicio</strong> del vídeo</li>
+      <li><strong>Video Benchmark Score</strong> - Calificación general que mide el rendimiento de su vídeo (<a href="/analytics/how-vbs-calculated.html">más información...</a>)</li>
+      <li><strong>Velocidad de reproducción</strong> - Inicio de vídeo/Impresiones de vídeo</li>
+      <li><strong>Porcentaje medio visto</strong> - Tiempo medio visualizado/Duración del vídeo</li>
+      <li><strong>Consejos</strong> - Próximamente</li>
+    </ul>
+    <p>Para ver todos los análisis del vídeo, haga clic en el enlace <strong>Ver todos los análisis</strong> .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="videos">Administración de vídeos</h2>
+    <p>Para utilizar el HUD para administrar y publicar vídeos en su cuenta, haga clic en el icono de vídeos (<img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-video-icon.png"/>) . Aparecerá una lista de vídeos en la cuenta.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-videos.png"/></figure>
+    <p>Al pasar el cursor sobre un vídeo se mostrará una serie de botones que proporcionan la capacidad de:</p>
+    <ul>
+      <li><a href="#publish">Publicar el vídeo</a></li>
+      <li><a href="#edit">Editar el vídeo</a></li>
+      <li><a href="#delete">Eliminar el vídeo</a></li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-videos-hover.png"/></figure>
+    <h3 id="publish">Publicación de vídeos</h3>
+    <p>Coloca el cursor sobre un vídeo y haz clic en <strong>Publicar</strong>. Seleccione un destino, una <strong>página Web</strong> o un <strong>correo electrónico</strong>. El asistente le guiará a través del proceso para generar el código de inserción o para obtener la miniatura del vídeo para usarla en un mensaje de correo electrónico. Para obtener más información sobre las opciones de publicación, consulte <a href="/videos/publishing-videos.html">Publicación de vídeos</a>.</p>
+    <h3 id="edit">Edición de vídeos</h3>
+    <p>Pase el cursor sobre un vídeo y haga clic en <strong>Editar</strong>. Edite las propiedades del vídeo según sea necesario y, a continuación, haga clic en <strong>Guardar</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/analytics/hud-video-edit.png"/></figure>
+    <h3 id="delete">Eliminar vídeos</h3>
+    <p>Coloca el cursor sobre un vídeo y haz clic en <strong>Eliminar</strong>. Se le pedirá que confirme la eliminación.</p>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
